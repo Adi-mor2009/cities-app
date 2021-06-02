@@ -10,6 +10,16 @@
     padding: 10px;
 }
 
+.p-cities .p-cities-img {
+    position: relative;
+}
+
+.p-cities .p-cities-spinner {
+    position: absolute;
+    top: 182px;
+    right: 235px;
+}
+
 .p-cities .pagination {
     justify-content: center;
     padding: 10px;
