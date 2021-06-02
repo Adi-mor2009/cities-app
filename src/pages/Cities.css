@@ -1,0 +1,16 @@
+.p-cities.saved_pic {
+    border: solid 1px;
+}
+
+.p-cities .c-searchbox {
+    padding: 10px;
+}
+
+.p-cities > img {
+    padding: 10px;
+}
+
+.p-cities .pagination {
+    justify-content: center;
+    padding: 10px;
+}
