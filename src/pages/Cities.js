@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Col, Container, Row, Spinner } from 'react-bootstrap';
+import { Button, Col, Container, Row, Spinner } from 'react-bootstrap';
 import SearchBox from '../components/SearchBox/SearchBox';
 import cityJSON from '../data/cities.json';
 import CityModel from '../model/CityModel';
-import { createClient } from 'pexels';
 import image from '../asserts/waiting.jpg';
 import './Cities.css';
 import { Pagination } from 'semantic-ui-react';
@@ -55,6 +54,10 @@ export default function Cities() {
         setPage(activePage.activePage);
     }
 
+    function savePicture() {
+        console.log("Should save the picture");
+    }
+
     return (
         <div className="p-cities">
             <Container>
@@ -73,6 +76,7 @@ export default function Cities() {
                             {loading && <div className="p-cities-spinner"><Spinner animation="border" variant="primary" /></div>}
                             {cityImg == "" && <img src={image} alt="default_img" />}
                             {cityImg != "" && <img src={cityImg} alt="city" />}
+                            <Button className="p-cities-save-icon" variant="link" onClick={() => savePicture()}><i className="bi bi-plus-circle-fill" style={{ color: 'lightskyblue' }}></i></Button>
                         </div>
                         <Pagination className="p-2"
                             activePage={page}

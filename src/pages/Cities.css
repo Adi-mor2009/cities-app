@@ -20,6 +20,17 @@
     right: 235px;
 }
 
+.p-cities .p-cities-save-icon {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.p-cities .p-cities-save-icon .btn-link.focus, .btn-link:focus, .btn.focus, .btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 .p-cities .pagination {
     justify-content: center;
     padding: 10px;
