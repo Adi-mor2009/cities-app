@@ -7,6 +7,7 @@ import image from '../asserts/waiting.jpg';
 import './Cities.css';
 import { Pagination } from 'semantic-ui-react';
 import ApiDataService from '../utils/ApiDataService';
+import SavedImageCard from '../components/SavedImageCard/SavedImageCard';
 
 export default function Cities() {
     const [cities, setCities] = useState(cityJSON.cities.map((city, index) => new CityModel(city, index)));
@@ -18,6 +19,9 @@ export default function Cities() {
     const [totalPages, setTotalPages] = useState(1);
     const [boundaryRange, setBoundaryRange] = useState(1);
     const [loading, setLoading] = useState(false);
+    const [savedImages, setSavedImages] = useState([]);
+
+    const saveImagesCards = savedImages !== undefined ? savedImages.map((saveImage, index) => <SavedImageCard image={saveImage.img} city={saveImage.city} index={index} onDelete={onSavedImageDelete}></SavedImageCard>) : [];
 
     function handleSearchChange(newSearchText) {
         setSearchText(newSearchText);
@@ -35,6 +39,7 @@ export default function Cities() {
         const test = results.length > 0 ? console.log("Get Image of " + results[city].name) : null;
         setSearchText([results[city].name])
         setResults([]);
+        setPage(1);
         setActiveCity(results[city]);
         setLoading(true);
         const data = await ApiDataService.getCityData(results[city], page);
@@ -54,8 +59,17 @@ export default function Cities() {
         setPage(activePage.activePage);
     }
 
-    function savePicture() {
+    async function savePicture() {
         console.log("Should save the picture");
+        setLoading(true);
+        const data = await ApiDataService.getCityData(activeCity, page, "small");
+        setLoading(false);
+        debugger
+        setSavedImages(savedImages => savedImages.concat({img: data.img, city: activeCity.name}));
+    }
+
+    function onSavedImageDelete(index) {
+        setSavedImages(savedImages => savedImages.slice(0, index).concat(savedImages.slice(index + 1, savedImages.length)));
     }
 
     return (
@@ -63,7 +77,7 @@ export default function Cities() {
             <Container>
                 <Row>
                     <Col className="saved_pic">
-
+                        {saveImagesCards}
                     </Col>
                     <Col>
                         <SearchBox
@@ -76,7 +90,7 @@ export default function Cities() {
                             {loading && <div className="p-cities-spinner"><Spinner animation="border" variant="primary" /></div>}
                             {cityImg == "" && <img src={image} alt="default_img" />}
                             {cityImg != "" && <img src={cityImg} alt="city" />}
-                            <Button className="p-cities-save-icon" variant="link" onClick={() => savePicture()}><i className="bi bi-plus-circle-fill" style={{ color: 'lightskyblue' }}></i></Button>
+                            {cityImg != "" && <Button className="p-cities-save-icon" variant="link" onClick={() => savePicture()}><i className="bi bi-plus-circle-fill" style={{ color: 'lightskyblue' }}></i></Button>}
                         </div>
                         <Pagination className="p-2"
                             activePage={page}
