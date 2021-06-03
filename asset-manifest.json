@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/cities-app/static/css/main.131ed56a.chunk.css",
+    "main.css": "/cities-app/static/css/main.5ddc74a8.chunk.css",
     "main.js": "/cities-app/static/js/main.22fce90e.chunk.js",
     "main.js.map": "/cities-app/static/js/main.22fce90e.chunk.js.map",
     "runtime-main.js": "/cities-app/static/js/runtime-main.f9602847.js",
@@ -12,7 +12,7 @@
     "static/js/3.1e330c7d.chunk.js.map": "/cities-app/static/js/3.1e330c7d.chunk.js.map",
     "index.html": "/cities-app/index.html",
     "static/css/2.a9c8cebd.chunk.css.map": "/cities-app/static/css/2.a9c8cebd.chunk.css.map",
-    "static/css/main.131ed56a.chunk.css.map": "/cities-app/static/css/main.131ed56a.chunk.css.map",
+    "static/css/main.5ddc74a8.chunk.css.map": "/cities-app/static/css/main.5ddc74a8.chunk.css.map",
     "static/js/2.3b9ec7f4.chunk.js.LICENSE.txt": "/cities-app/static/js/2.3b9ec7f4.chunk.js.LICENSE.txt",
     "static/media/bootstrap-icons.css": "/cities-app/static/media/bootstrap-icons.dfd0ea12.woff2",
     "static/media/semantic.min.css": "/cities-app/static/media/outline-icons.ddae9b1b.woff",
@@ -23,7 +23,7 @@
     "static/js/runtime-main.f9602847.js",
     "static/css/2.a9c8cebd.chunk.css",
     "static/js/2.3b9ec7f4.chunk.js",
-    "static/css/main.131ed56a.chunk.css",
+    "static/css/main.5ddc74a8.chunk.css",
     "static/js/main.22fce90e.chunk.js"
   ]
 }
