@@ -14,6 +14,13 @@
     position: relative;
 }
 
+.p-cities {
+    background-image: linear-gradient(white,rgb(252, 236, 213), rgb(245, 197, 122),white);
+    min-height: 100vh;
+    /* background-color: antiquewhite; */
+    /* height: 100vh;
+    background-image: url("../asserts/reka1.jpg"); */
+}
 .p-cities .p-cities-spinner {
     position: absolute;
     top: 182px;
